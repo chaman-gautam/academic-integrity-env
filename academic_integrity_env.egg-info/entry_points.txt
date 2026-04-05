@@ -1,3 +1,0 @@
-[console_scripts]
-academic-integrity-server = server.app:main
-server = server.app:main
