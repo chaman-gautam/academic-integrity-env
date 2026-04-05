@@ -1,0 +1,34 @@
+name: academic_integrity_env
+version: 1.0.0
+
+description: |
+  Investigate academic misconduct cases. The agent gathers evidence 
+  (similarity report, statements, documents) and then makes a ruling 
+  (no violation, warning, grade penalty, course failure).
+  Reward is shaped for thoroughness, ethics, and correctness.
+
+author: Chaman Gautam
+
+# 🔥 Add this (recommended for HF + validator safety)
+entrypoint: server:app
+
+tags:
+  - openenv
+  - decision-making
+  - ethics
+  - investigation
+  - real-world
+
+# Models
+observation_model: InvestigationObservation
+action_model: InvestigationAction
+reward_model: InvestigationReward
+
+# Episode constraints
+max_episode_steps: 10
+
+# Tasks (VERY IMPORTANT — add explicitly)
+tasks:
+  - easy
+  - medium
+  - hard

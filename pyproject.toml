@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "academic-integrity-env"
+version = "1.0.0"
+description = "Academic integrity investigation environment"
+authors = [{ name = "Your Name" }]
+license = { text = "MIT" }
+dependencies = [
+    "pydantic>=2.0.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "openai>=1.0.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "openenv-core>=0.2.0",
+]
+
+[project.scripts]
+server = "server.app:main"
+academic-integrity-server = "server.app:main"
+
+[tool.setuptools]
+py-modules = ["environment", "models", "grader", "tasks", "inference"]
+packages = ["server"]
+
+[tool.openenv]
+entrypoint = "environment:AcademicIntegrityEnv"
